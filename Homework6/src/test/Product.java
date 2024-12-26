@@ -1,5 +1,7 @@
 package test;
 
+import java.time.LocalDate;
+
 public class Product {
     private String type;
 
@@ -7,10 +9,14 @@ public class Product {
 
     private boolean sale;
 
-    public Product(String type, double price, boolean sale) {
+
+    private LocalDate addedDate;
+
+    public Product(String type, double price, boolean sale, LocalDate addedDate) {
         this.type = type;
         this.price = price;
         this.sale = sale;
+        this.addedDate = addedDate;
     }
 
     public String getType() {
@@ -37,12 +43,21 @@ public class Product {
         this.sale = sale;
     }
 
+    public LocalDate getAddedDate() {
+        return addedDate;
+    }
+
+    public void setAddedDate(LocalDate addedDate) {
+        this.addedDate = addedDate;
+    }
+
     @Override
     public String toString() {
         return "Product{" +
                 "type='" + type + '\'' +
                 ", price=" + price +
                 ", sale=" + sale +
+                ", addedDate=" + addedDate +
                 '}';
     }
 }

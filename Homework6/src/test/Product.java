@@ -5,6 +5,8 @@ public class Product {
 
     private double price;
 
+    private boolean sale;
+
 
     public String getType() {
         return type;
@@ -22,12 +24,20 @@ public class Product {
         this.price = price;
     }
 
+    public boolean isSale() {
+        return sale;
+    }
+
+    public void setSale(boolean sale) {
+        this.sale = sale;
+    }
 
     @Override
     public String toString() {
         return "Product{" +
                 "type='" + type + '\'' +
                 ", price=" + price +
+                ", sale=" + sale +
                 '}';
     }
 }

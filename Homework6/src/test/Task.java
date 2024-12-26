@@ -25,6 +25,12 @@ public class Task {
                 .toList();
     }
 
+    public Product getCheapestProductFromCategory(String category){
+        return products.stream()
+                .filter(product -> product.getType().equals(category))
+                .min((p1,p2)->(int)(p2.getPrice()-p1.getPrice())).orElse(new Product());
+    }
+
     @Override
     public String toString() {
         return products.toString();

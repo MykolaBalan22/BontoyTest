@@ -61,15 +61,4 @@ public class Task {
         return array;
     }
 
-    public int numberOfPoints(List<List<Integer>> nums) {
-        return 7;
-
-
-
-    }
-
-
-
-
-
 }

@@ -1,6 +1,7 @@
 package test;
 
 import java.util.List;
+import java.util.NoSuchElementException;
 
 public class Task {
 
@@ -25,10 +26,11 @@ public class Task {
                 .toList();
     }
 
-    public Product getCheapestProductFromCategory(String category){
+    public Product getCheapestProductFromCategory(String category) throws Exception{
         return products.stream()
                 .filter(product -> product.getType().equals(category))
-                .min((p1,p2)->(int)(p2.getPrice()-p1.getPrice())).orElse(new Product());
+                .min((p1,p2)->(int)(p1.getPrice()-p2.getPrice()))
+                .orElseThrow(()-> new Exception(String.format("Продукт %s не знайдено", category)));
     }
 
     @Override

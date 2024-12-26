@@ -7,6 +7,11 @@ public class Product {
 
     private boolean sale;
 
+    public Product(String type, double price, boolean sale) {
+        this.type = type;
+        this.price = price;
+        this.sale = sale;
+    }
 
     public String getType() {
         return type;

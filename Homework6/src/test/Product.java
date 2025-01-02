@@ -9,7 +9,6 @@ public class Product {
 
     private boolean sale;
 
-
     private LocalDate addedDate;
 
     public Product(String type, double price, boolean sale, LocalDate addedDate) {

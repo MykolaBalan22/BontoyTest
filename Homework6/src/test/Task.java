@@ -1,5 +1,6 @@
 package test;
 
+import java.time.LocalDate;
 import java.util.Comparator;
 import java.util.List;
 
@@ -38,6 +39,16 @@ public class Task {
                 .sorted(Comparator.comparing(Product::getAddedDate))
                 .limit(3)
                 .toList();
+    }
+
+    public double getSummaryProductPriceByFilter(LocalDate year, String category, double price) {
+        return products.stream()
+                .filter(product -> product.getPrice() <= price)
+                .filter(product -> product.getType().equals(category))
+                .filter(product -> product.getAddedDate().getYear() >= LocalDate.now().getYear())
+                .map(Product::getPrice)
+                .reduce(Double::sum)
+                .orElse(-1.0);
     }
 
     @Override
